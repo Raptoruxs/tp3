@@ -19,9 +19,12 @@ public class Portefeuille {
    * @return Vrai si la transaction a été effectuée, faux sinon.  
    */
   public boolean transfertDevise (Portefeuille destination, double montantJetons){
-      /**
-           FONCTION À IMPLEMENTER
-	  **/
+      if ( this.getMonnaie() == destination.getMonnaie() && this.montant >= montantJetons )
+      {
+          destination.montant += montantJetons;
+          this.montant -= montantJetons;
+          return true;
+      }
       return false;
   }
 
@@ -33,9 +36,6 @@ public class Portefeuille {
    * @return true si le montant en euros est supérieur ou égal à 0 
    */
   public boolean achatDevise (double montantEuros){
-	/**
-           FONCTION À IMPLEMENTER
-	**/
     return false;
   }
 
